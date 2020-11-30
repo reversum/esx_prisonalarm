@@ -44,7 +44,7 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-	Citizen.Wait(50)
+	Citizen.Wait(10000)
 	if spawned then
 	local playerPos = GetEntityCoords(PlayerPedId(), true)
 	PlayerData = ESX.GetPlayerData()
@@ -54,22 +54,14 @@ Citizen.CreateThread(function()
 
 	ESX.TriggerServerCallback("esx-qalle-jail:retrieveJailTime", function(inJail, newJailTime)
 		if inJail then
-	        local distance = Vdist(playerPos.x, playerPos.y, playerPos.z, 1690.28, 2582.4, 45.92)
+	                local distance = Vdist(playerPos.x, playerPos.y, playerPos.z, 1690.28, 2582.4, 45.92)
 			if distance < 130.0 then
-				if isinprison == true then
-				else
-		            isinprison = true
 		            TriggerServerEvent("gvrp_alarm", eventpassword)
+                        else
+                            Wait(5000)
+			    StopAllAlarms(true)
+                        end
                 end
-            end
-			if isinprison then
-				if distance > 130.0 then
-	                isinprison = false
-	                Wait(5000)
-					StopAllAlarms(true)	
-                end
-            end
-        end
     end)
 end
 end
