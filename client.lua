@@ -62,7 +62,7 @@ Citizen.CreateThread(function()
 			    StopAllAlarms(true)
                         end
                 end
-    end)
+         end)
 end
 end
 end)
