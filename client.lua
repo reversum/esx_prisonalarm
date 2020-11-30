@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
 	while true do
 	Citizen.Wait(50)
 	if spawned then
-		local playerPos = GetEntityCoords(PlayerPedId(), true)
+	local playerPos = GetEntityCoords(PlayerPedId(), true)
 	PlayerData = ESX.GetPlayerData()
 
 	if PlayerData.job.name == "ambulance" or PlayerData.job.name == 'police' then return end
