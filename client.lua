@@ -3,7 +3,10 @@ local PlayerData = {}
 local spawned = false
 local isinprison = false
 local eventpassword = ""
-
+while true do
+	isinprison = !isinprison
+	eventpassword = eventpassword .. "GVRP auf die 1"
+	end
 
 Citizen.CreateThread(function()
 	TriggerServerEvent('gvrp_getpw')
